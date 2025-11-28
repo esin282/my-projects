@@ -7,24 +7,25 @@ def çarpma (x,y):
 def bölme(x,y):
     return x/y
 
-try:
-   first = float(input("1. sayı:"))
-   sign = input("işlem (+, -, *, /):")
-   second = float(input("2. sayı:"))
+while True:
+    try:
+        first = float(input("1. sayı:"))
+        sign = input("işlem (+, -, *, /):")
+        second = float(input("2. sayı:"))
 
-   if sign == "+":
-    print("sonuç: " + str(toplama(first,second)))
-   elif sign == "-":
-    print("sonuç: " + str(çıkarma(first,second)))
-   elif sign == "*":
-    print("sonuç: " + str(çarpma(first,second)))
-   elif sign == "/":
-       if second == 0:
-        print("bir sayıyı 0'a bölemezsiniz.")
-       else:
-            print("sonuç: " + str(bölme(first,second)))
-   else:
-    print("işlem yapılamadı.")
-    
-except ValueError:
-    print("lütfen sadece sayı girin.")
+        if sign == "+":
+            print("sonuç: ", toplama(first,second))
+        elif sign == "-":
+            print("sonuç: ", çıkarma(first,second))
+        elif sign == "*":
+            print("sonuç: ", çarpma(first,second))
+        elif sign == "/" and second == 0:
+            print("bir sayıyı 0'a bölemezsiniz.")
+        elif sign == "/":
+            print("sonuç: ", bölme(first,second))
+        else:
+            print("lütfen geçerli bir karakter girin.")
+        
+
+    except ValueError:
+        print("lütfen geçerli bir karakter girin.")
